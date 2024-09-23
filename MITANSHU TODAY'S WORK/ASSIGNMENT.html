@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optica Core Team 2024 & JSCOP Events</title>
+    <style>
+        body {
+            font-family: 'Times New Roman' ;
+            margin: 20px;
+        }
+        h2 {
+            color: black;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        button {
+            margin-top: 10px;
+            background-color: black;
+            color: white;
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 8px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .event {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        .event img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Optica Core Team 2024</h2>
+    <form id="team">
+        NAME : 
+        <input type="text" id="name" required>
+        DESIGNATION : 
+        <input type="text" id="designation" required>
+        <button type="submit">Submit</button>
+    </form>
+    <h2>Optica Core Team 2024 Members</h2>
+    <ul id="CoreTeam"></ul>
+    <h2>JSCOP EVENTS</h2>
+    <div class="event">
+        <h3>Event Name : </h3>
+        <p></p>
+        <img src="" alt="EVENT 1">
+    </div>
+    <div class="event">
+        <h3>Event Name : </h3>
+        <p></p>
+        <img src="" alt="EVENT 2">
+    </div>
+    <script>
+        let x = document.getElementById('team');
+        x.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const designation = document.getElementById('designation').value;
+            const listItem = document.createElement('li');
+            listItem.textContent = `${name}-${designation}`;
+            document.getElementById('CoreTeam').appendChild(listItem);
+        });
+    </script>
+</body>
+</html>
